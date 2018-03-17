@@ -1,0 +1,3 @@
+Usage:
+
+./assembler [ifilename] > [ofilename]

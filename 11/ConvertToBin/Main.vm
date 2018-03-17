@@ -1,0 +1,116 @@
+// ========== Main ==========
+// ===== Main.main =====
+function Main.main 1
+push constant 8001
+push constant 16
+push constant 1
+neg
+call Main.fillMemory 3
+pop temp 0
+push constant 8000
+call Memory.peek 1
+pop local 0
+push local 0
+call Main.convert 1
+pop temp 0
+push constant 0
+return
+// ----- Main.main -----
+// ===== Main.convert =====
+function Main.convert 3
+push constant 1
+neg
+pop local 2
+label Main.convert.WHILE.BEGIN.0
+push local 2
+not
+if-goto Main.convert.WHILE.END.0
+push local 1
+push constant 1
+add
+pop local 1
+push local 0
+call Main.nextMask 1
+pop local 0
+push local 1
+push constant 16
+gt
+not
+not
+if-goto Main.convert.IF.TRUE.0
+push argument 0
+push local 0
+and
+push constant 0
+eq
+not
+not
+if-goto Main.convert.IF.TRUE.1
+push constant 8000
+push local 1
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+goto Main.convert.IF.FALSE.1
+label Main.convert.IF.TRUE.1
+push constant 8000
+push local 1
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+label Main.convert.IF.FALSE.1
+goto Main.convert.IF.FALSE.0
+label Main.convert.IF.TRUE.0
+push constant 0
+pop local 2
+label Main.convert.IF.FALSE.0
+goto Main.convert.WHILE.BEGIN.0
+label Main.convert.WHILE.END.0
+push constant 0
+return
+// ----- Main.convert -----
+// ===== Main.nextMask =====
+function Main.nextMask 0
+push argument 0
+push constant 0
+eq
+not
+if-goto Main.nextMask.IF.TRUE.0
+push constant 1
+return
+goto Main.nextMask.IF.FALSE.0
+label Main.nextMask.IF.TRUE.0
+push argument 0
+push constant 2
+call Math.multiply 2
+return
+label Main.nextMask.IF.FALSE.0
+// ----- Main.nextMask -----
+// ===== Main.fillMemory =====
+function Main.fillMemory 0
+label Main.fillMemory.WHILE.BEGIN.0
+push argument 1
+push constant 0
+gt
+not
+if-goto Main.fillMemory.WHILE.END.0
+push argument 0
+push argument 2
+call Memory.poke 2
+pop temp 0
+push argument 1
+push constant 1
+sub
+pop argument 1
+push argument 0
+push constant 1
+add
+pop argument 0
+goto Main.fillMemory.WHILE.BEGIN.0
+label Main.fillMemory.WHILE.END.0
+push constant 0
+return
+// ----- Main.fillMemory -----
+// ---------- Main ----------
