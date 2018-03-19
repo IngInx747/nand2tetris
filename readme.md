@@ -1,24 +1,26 @@
 # nand2tetris
 The Element of Computing System Projects
 
-Boolean Logic
+MPCS 52011 Introduction to Computer Systems Projects back up
 
-Combinatorial Chips	
+High-level projects (pj6, 7, 8, 10, 11) were implemented by c++14.
 
-Sequential Chips		
+1.Boolean Logic
 
-Machine Language		
+2.Combinatorial Chips	
 
-Computer Architecture
+3.Sequential Chips		
 
-Assembler
+4.Machine Language		
 
-Virtual Machine I: Arithmetic
+5.Computer Architecture
 
-Virtual Machine II: Control
+6.Assembler
 
-Compiler I: Syntax Analysis
+7.Virtual Machine I: Arithmetic
 
-Compiler II: Code Generation
+8.Virtual Machine II: Control
 
-Most of high-level projects (pj6, 7, 8, 10, 11) were implemented by c++14.
+10.Compiler I: Syntax Analysis
+
+11.Compiler II: Code Generation
