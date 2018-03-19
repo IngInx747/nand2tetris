@@ -20,3 +20,5 @@ Virtual Machine II: Control
 Compiler I: Syntax Analysis
 
 Compiler II: Code Generation
+
+Most of high-level projects (pj6, 7, 8, 10, 11) were implemented by c++14.
